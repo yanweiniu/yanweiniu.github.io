@@ -91,7 +91,12 @@ search:
 # Admin
 admin:
     name: yanwei
-    password: git
+    password: aciton
     secret: hey hexo
     expire: 60*1
     # cors: http://localhost:3000
+    # username: yanwei
+    # password_hash: ’418c5509e2171d55b0aee5c2ea4442b5‘
+    # secret: hey hexo
+    deployCommand: './hexo-deploy.sh'
+ 
