@@ -4,11 +4,13 @@ tags: []
 categories: []
 date: 2018-11-18 20:45:00
 ---
-![upload successful](https://user-images.githubusercontent.com/16861688/50393715-1545e580-0793-11e9-920b-1790df0c60db.png)
-必备知识点通常包括以下几部分。
+
+Hyperledger (或 Hyperledger项目)是一个旨在推动区块链跨行业应用的开源项目
+这里总结一下需要掌握的知识点：
 
 Docker
 Docker 是一个开源的应用容器引擎，基于 Go 语言并遵从Apache2.0协议开源。 Docker 可以让开发者将应用和依赖包打包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。 容器完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 App），更重要的是容器性能开销极低。
+<!-- more -->
 
 在学习HyperLedger Fabric的过程中，开发人员需要掌握Docker的基本操作命令，以便可以更快上手，这其中包括打包、拆包、tag、容器管理、镜像管理等。同时，也需要学习Docker Compose和YAML的编排方案，了解如何挂载文件路径、设置端口绑定、确定Network以及掌握环境变量的用法等。
 
@@ -48,3 +50,5 @@ SDK（Java/Node.js）
 HyperLedger Fabric最终需要落地于实际应用，相对于HyperLedger Fabric的应用层则会直接提供接口给其他各客户端并对区块链网络进行操作。目前，基于HyperLedger Fabric的SDK方案有很多，但相对较成熟的主要还是Java和Node.js的。所以，这两门语言应当是学习HyperLedger Fabric平台工程师的主力语言，建议熟练使用两者其中之一。
 
 如果这两门语言都不是目前学习Hyperledger Fabric工程师的主力语言，可以考虑用其他被gRPC所支持的编程语言自行实现，或者使用Fabric-SDK-Container提供的解决方案。
+
+![upload successful](https://user-images.githubusercontent.com/16861688/50393715-1545e580-0793-11e9-920b-1790df0c60db.png)

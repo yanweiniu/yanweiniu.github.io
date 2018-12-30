@@ -1,7 +1,8 @@
 title: Web Api Checklist
 author: yanwei
-date: 2018-12-07 19:55:52
-tags:
+tags: []
+categories: []
+date: 2018-12-07 19:55:00
 ---
 ### Web API Checklist
 > 1. URI 是否短小且容易输入
@@ -14,6 +15,7 @@ tags:
 > 8. URI 里用到的单词所表示的意思是否和大部分 API 相同
 > 9. URI 里用到的名词是否采用了复数形式
 > 10. URI 里有没有空格符及需要编码的字符
+<!-- more -->
 > 11. URI 里的单词和单词之间有没有使用连接符（-）
 > 12. 分页的设计是否恰当
 > 13. 登录有没有使用 OAuth 2.0
