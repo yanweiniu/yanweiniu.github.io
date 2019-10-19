@@ -2,27 +2,35 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html class="theme-next muse use-motion" lang="zh-CN">
+
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
 
 
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2">
 
 
 
@@ -40,7 +48,67 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
 
 
 
@@ -48,64 +116,20 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico?v=5.1.3">
-
-
-  <link rel="mask-icon" href="/images/logo.png?v=5.1.3" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="niuyanwei, yanwei">
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="只有全力以赴，才能无怨无悔">
-<meta property="og:type" content="website">
-<meta property="og:title" content="{FS}yanwei">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
-<meta property="og:site_name" content="{FS}yanwei">
-<meta property="og:description" content="只有全力以赴，才能无怨无悔">
-<meta property="og:locale" content="zh-Hans">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="{FS}yanwei">
-<meta name="twitter:description" content="只有全力以赴，才能无怨无悔">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
-    version: '5.1.3',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    scheme: 'Muse',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: true,
     fancybox: true,
+    fastclick: true,
+    lazyload: true,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
+    motion: {"enable":true,"async":false,"transition":{"post_block":"shrinkIn","post_header":"slideLeftIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideDownIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -117,65 +141,122 @@
 </script>
 
 
-
-  <link rel="canonical" href="http://yoursite.com/page/2/">
-
+  
 
 
 
 
-  <title>{FS}yanwei</title>
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "bd399fce"
+    });
+  daovoice('update');
+  </script>
+
+  <meta name="description" content="只有全力以赴，才能无怨无悔">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{FS}燕尾">
+<meta property="og:url" content="yanweiniu.github.io/page/2/index.html">
+<meta property="og:site_name" content="{FS}燕尾">
+<meta property="og:description" content="只有全力以赴，才能无怨无悔">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{FS}燕尾">
+<meta name="twitter:description" content="只有全力以赴，才能无怨无悔">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="{FS}燕尾" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="yanweiniu.github.io/page/2/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>{FS}燕尾</title>
   
 
 
 
 
 
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?9d554fcf5edea74a60c23d9e469ffaa4";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
 
 
 
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+ 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
     
   
 
-  <div class="container sidebar-position-right 
+  <div class="container sidebar-position-left 
   page-home">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">{FS}yanwei</span>
+        <span class="site-title">{FS}燕尾</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <p class="site-subtitle">a simple man</p>
       
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -183,66 +264,131 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
-      
+          
+          <li class="menu-item menu-item-home">
 
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-bookmark"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-互动">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/guestbook/" rel="section"><i class="menu-item-icon fa fa-fw fa-comments"></i> <br>互动</a>
+
+  </li>
+
+      
       
         <li class="menu-item menu-item-search">
           
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
-            
-            搜索
-          </a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
         </li>
       
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -271,12 +417,20 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -289,21 +443,23 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/05/Emmet使用技巧/">
+    <link itemprop="mainEntityOfPage" href="yanweiniu.github.io/2018/03/05/Emmet使用技巧.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yanwei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="丨yanwei丨">
+      <meta itemprop="description" content="只有全力以赴，才能无怨无悔">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="{FS}yanwei">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="{FS}燕尾">
     </span>
 
     
@@ -313,11 +469,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/05/Emmet使用技巧/" itemprop="url">Emmet使用技巧</a></h1>
+                
+                <a href="/2018/03/05/Emmet使用技巧.html" class="post-title-link" itemprop="url">Emmet使用技巧</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -325,13 +490,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-05T13:07:01+08:00">
-                2018-03-05
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-05 13:07:01" itemprop="dateCreated datePublished" datetime="2018-03-05T13:07:01+08:00">2018-03-05</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-03-07 13:23:04" itemprop="dateModified" datetime="2018-03-07T13:23:04+08:00">2018-03-07</time>
+              
             
           </span>
 
@@ -339,6 +521,7 @@
 
           
             
+            
           
 
           
@@ -346,6 +529,34 @@
 
           
 
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">3.3k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">3 分钟</span>
+              
+            </div>
           
 
           
@@ -366,18 +577,23 @@
         
           <p><strong>使用”&gt;”号来生成子元素</strong></p>
 <blockquote>
-<p>div&gt;ul&gt;li <tab键><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li&gt;&lt;/li&gt;</span><br><span class="line">  &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></tab键></p>
+<p>div&gt;ul&gt;li &lt;Tab键&gt;<br><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">&lt;div&gt;</span></span><br><span class="line">  <span class="section">&lt;ul&gt;</span></span><br><span class="line">    <span class="section">&lt;li&gt;</span><span class="section">&lt;/li&gt;</span></span><br><span class="line">  <span class="section">&lt;/ul&gt;</span></span><br><span class="line"><span class="section">&lt;/div&gt;</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/05/Emmet使用技巧/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/03/05/Emmet使用技巧.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
@@ -385,8 +601,14 @@
     
 
     
+      
+    
+    
 
     
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
       
@@ -416,21 +638,23 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/27/chrome调试笔记/">
+    <link itemprop="mainEntityOfPage" href="yanweiniu.github.io/2018/01/27/chrome调试笔记.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yanwei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="丨yanwei丨">
+      <meta itemprop="description" content="只有全力以赴，才能无怨无悔">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="{FS}yanwei">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="{FS}燕尾">
     </span>
 
     
@@ -440,11 +664,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/27/chrome调试笔记/" itemprop="url">chrome调试笔记</a></h1>
+                
+                <a href="/2018/01/27/chrome调试笔记.html" class="post-title-link" itemprop="url">chrome调试笔记</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -452,13 +685,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-27T16:57:02+08:00">
-                2018-01-27
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2018-01-27 16:57:02" itemprop="dateCreated datePublished" datetime="2018-01-27T16:57:02+08:00">2018-01-27</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-03-07 13:28:40" itemprop="dateModified" datetime="2018-03-07T13:28:40+08:00">2018-03-07</time>
+              
             
           </span>
 
@@ -474,11 +724,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 
                 
                 
@@ -488,6 +734,7 @@
 
           
             
+            
           
 
           
@@ -495,6 +742,34 @@
 
           
 
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">318</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
           
 
           
@@ -515,15 +790,20 @@
         
           <p>主要包含Chrome浏览器一些调试方法<br>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/27/chrome调试笔记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/01/27/chrome调试笔记.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </p></div>
+
+    
+
     
     
     
@@ -531,8 +811,14 @@
     
 
     
+      
+    
+    
 
     
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
       
@@ -562,21 +848,23 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/31/新年规划/">
+    <link itemprop="mainEntityOfPage" href="yanweiniu.github.io/2017/12/31/新年规划.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yanwei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="丨yanwei丨">
+      <meta itemprop="description" content="只有全力以赴，才能无怨无悔">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="{FS}yanwei">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="{FS}燕尾">
     </span>
 
     
@@ -586,11 +874,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/31/新年规划/" itemprop="url">17总结&18规划</a></h1>
+                
+                <a href="/2017/12/31/新年规划.html" class="post-title-link" itemprop="url">17总结&18规划</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -598,13 +895,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-31T19:13:31+08:00">
-                2017-12-31
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-12-31 19:13:31" itemprop="dateCreated datePublished" datetime="2017-12-31T19:13:31+08:00">2017-12-31</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-03-07 13:24:56" itemprop="dateModified" datetime="2018-03-07T13:24:56+08:00">2018-03-07</time>
+              
             
           </span>
 
@@ -612,6 +926,7 @@
 
           
             
+            
           
 
           
@@ -619,6 +934,34 @@
 
           
 
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">1.1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
           
 
           
@@ -639,15 +982,20 @@
         
           <p>16年底我第一次写了我的第一篇年终总结，到现在忘得不清不楚。不过没关系，那只是第一次尝试，现在来看，那个时候只是知道了是什么、为什么，却不知道怎么做？所以2017年应该是我从理论转向实践的一个过渡，也是从校园到社会的一个缓冲。<br>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/31/新年规划/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/12/31/新年规划.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </p></div>
+
+    
+
     
     
     
@@ -655,8 +1003,14 @@
     
 
     
+      
+    
+    
 
     
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
       
@@ -686,21 +1040,23 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/27/重新认识爱因斯坦/">
+    <link itemprop="mainEntityOfPage" href="yanweiniu.github.io/2017/11/27/重新认识爱因斯坦.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yanwei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="丨yanwei丨">
+      <meta itemprop="description" content="只有全力以赴，才能无怨无悔">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="{FS}yanwei">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="{FS}燕尾">
     </span>
 
     
@@ -710,11 +1066,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/27/重新认识爱因斯坦/" itemprop="url">重新认识爱因斯坦</a></h1>
+                
+                <a href="/2017/11/27/重新认识爱因斯坦.html" class="post-title-link" itemprop="url">重新认识爱因斯坦</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -722,13 +1087,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T21:46:28+08:00">
-                2017-11-27
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-11-27 21:46:28" itemprop="dateCreated datePublished" datetime="2017-11-27T21:46:28+08:00">2017-11-27</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-03-07 13:47:26" itemprop="dateModified" datetime="2018-03-07T13:47:26+08:00">2018-03-07</time>
+              
             
           </span>
 
@@ -744,11 +1126,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/人物/" itemprop="url" rel="index">
-                    <span itemprop="name">人物</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/人物/" itemprop="url" rel="index"><span itemprop="name">人物</span></a></span>
 
                 
                 
@@ -758,6 +1136,7 @@
 
           
             
+            
           
 
           
@@ -765,6 +1144,34 @@
 
           
 
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">3.3k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">3 分钟</span>
+              
+            </div>
           
 
           
@@ -785,15 +1192,20 @@
         
           <p>  <img src="http://upload-images.jianshu.io/upload_images/4216495-00fd8dde4a295be6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="你看着我，我看着你"><br>  很久很久以前我就知道爱因斯坦这个人，那时只知道他是一个为伟大的科学家，仅此而已。直到写这篇文章之前我也只是知道一些诸如相对论、量子学、原子弹相关的名词而已，但是对待一个如此伟大的人，我觉得是时候去了解一下了。<br>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/27/重新认识爱因斯坦/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/11/27/重新认识爱因斯坦.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </p></div>
+
+    
+
     
     
     
@@ -801,8 +1213,14 @@
     
 
     
+      
+    
+    
 
     
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
       
@@ -832,21 +1250,23 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/25/css碎碎念/">
+    <link itemprop="mainEntityOfPage" href="yanweiniu.github.io/2017/10/25/css碎碎念.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yanwei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="丨yanwei丨">
+      <meta itemprop="description" content="只有全力以赴，才能无怨无悔">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="{FS}yanwei">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="{FS}燕尾">
     </span>
 
     
@@ -856,11 +1276,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/25/css碎碎念/" itemprop="url">css碎碎念</a></h1>
+                
+                <a href="/2017/10/25/css碎碎念.html" class="post-title-link" itemprop="url">css碎碎念</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -868,13 +1297,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-25T22:58:44+08:00">
-                2017-10-25
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-10-25 22:58:44" itemprop="dateCreated datePublished" datetime="2017-10-25T22:58:44+08:00">2017-10-25</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-30 13:18:17" itemprop="dateModified" datetime="2018-12-30T13:18:17+08:00">2018-12-30</time>
+              
             
           </span>
 
@@ -890,11 +1336,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a></span>
 
                 
                 
@@ -904,6 +1346,7 @@
 
           
             
+            
           
 
           
@@ -911,6 +1354,34 @@
 
           
 
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">6.3k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">6 分钟</span>
+              
+            </div>
           
 
           
@@ -930,32 +1401,32 @@
       
         
           
-            <hr>
-<p><strong>实现底部footer</strong></p>
-<ol>
-<li>外部有一个wrapper容器，要min-height:100%;撑满页面高度。</li>
-<li>footer参考wrapper绝对定位，用bottom:0定在底部</li>
-<li>main用来放置页面主体内容，padding-bottom与footer高度一致，用于页面长的时候给footer撑出高度</li>
-</ol>
-<p><strong>文本不换行省略效果</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">white-space: nowrap</span><br><span class="line">overflow:hidden</span><br><span class="line">text-overflow:ellipsis</span><br></pre></td></tr></table></figure></p>
-<p><strong>瀑布流原理</strong></p>
-<blockquote>
-<p>　<br>瀑布流布局要求要进行布置的元素等宽，然后计算元素的宽度与浏览器宽度之比，得到需要布置的列数。<br>创建一个数组，长度为列数，里面的值为已布置元素的总高度（最开始为0）<br>然后将未布置的元素依次布置到高度最小的那一列，就得到了瀑布流布局。</p>
-</blockquote>
-<p><strong>transition一个速记法：transition: css属性 动画持续时间 动画类型  动画延迟时间；</strong> </p>
-<p><strong>两列布局一列宽度固定，一列宽度不固定</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">方法一：把side改写为绝对定位</span><br><span class="line">.side&#123;    </span><br><span class="line">    position:absolute;left:0;top:0;    </span><br><span class="line">    width:200px;height:200px;    </span><br><span class="line">    background:red;    </span><br><span class="line">&#125;    </span><br><span class="line">.main&#123;    </span><br><span class="line">    margin-left:210px;    </span><br><span class="line">    background:blue;    </span><br><span class="line">    height:200px;    </span><br><span class="line">&#125;  </span><br><span class="line">方法二：把side改写为浮动</span><br><span class="line">.side&#123;    </span><br><span class="line">    width:200px;    </span><br><span class="line">    height:200px;    </span><br><span class="line">    float:left;    </span><br><span class="line">    background:red;    </span><br><span class="line">&#125;    </span><br><span class="line">   </span><br><span class="line">.main&#123;    </span><br><span class="line">    margin-left:210px;    </span><br><span class="line">    background:blue;    </span><br><span class="line">    height:200px;    </span><br><span class="line">&#125; </span><br><span class="line">方法三：flex布局</span><br><span class="line">.parent &#123;</span><br><span class="line">	display:flex; </span><br><span class="line">&#125;       </span><br><span class="line">.side&#123;    </span><br><span class="line">   width:200px;    </span><br><span class="line">   height:200px;    </span><br><span class="line">    background:red;    </span><br><span class="line">    margin-right:10px;    </span><br><span class="line">&#125;    </span><br><span class="line">.main&#123;    </span><br><span class="line">    background:blue;    </span><br><span class="line">    height:200px;    </span><br><span class="line">    flex:1;    </span><br><span class="line">&#125;</span><br><span class="line">方法四：利用BFC不与浮动元素重叠的特性</span><br><span class="line"></span><br><span class="line">.side &#123;    </span><br><span class="line">  width: 200px;    </span><br><span class="line">  height: 100px;    </span><br><span class="line">  float: left;    </span><br><span class="line">  background: red;    </span><br><span class="line">  margin-right: 10px;    </span><br><span class="line">/* 这里没有flex才能按自身设定的宽度渲染 */</span><br><span class="line">/* 如果有了flex则宽度设定无效 */</span><br><span class="line">&#125;    </span><br><span class="line">.main &#123;    </span><br><span class="line">  /* 创建BFC   */   </span><br><span class="line">  overflow: hidden;    </span><br><span class="line">  background: blue;    </span><br><span class="line">  height: 100px;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>如何进行水平垂直居中(行内块元素)</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">方案一：用display: table-cell;</span><br><span class="line">内部元素如果是display:block;则无效</span><br><span class="line">.box&#123;</span><br><span class="line">	display: table-cell;</span><br><span class="line">	vertical-align:middle;/*垂直居中*/</span><br><span class="line">	text-align:center;/*水平居中*/</span><br><span class="line">&#125;</span><br><span class="line">方案二：单纯flex布局</span><br><span class="line">.box&#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content:center;/*水平居中*/</span><br><span class="line">    align-items:center;/*垂直居中*/</span><br><span class="line">&#125;</span><br><span class="line">方案三：flex与margin:auto;结合</span><br><span class="line">.box&#123;</span><br><span class="line">    display: flex;</span><br><span class="line">&#125;</span><br><span class="line">button&#123;margin: auto;&#125;</span><br><span class="line">方案四：绝对定位与0</span><br><span class="line">.box&#123;</span><br><span class="line">    position:relative;/*需要父元素定位*/</span><br><span class="line">&#125;</span><br><span class="line">button&#123;</span><br><span class="line">  overflow: auto; </span><br><span class="line">  margin: auto; </span><br><span class="line">  position: absolute; </span><br><span class="line">  top: 0; left: 0; bottom: 0; right: 0; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>三栏水平布局，其中 left 、 right 分别位于左右两边， left 宽度为 200px ， right 宽度为 300px ， main 处在中间，宽度自适应。</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br></pre></td><td class="code"><pre><span class="line">/*三栏结构大致如下*/</span><br><span class="line">&lt;divclass=&quot;container&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;main&quot;&gt;main&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;left&quot;&gt;left&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;right&quot;&gt;right&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"> //Flex 布局</span><br><span class="line"> .container &#123;</span><br><span class="line">    display:flex;</span><br><span class="line">&#125;</span><br><span class="line">.main&#123;</span><br><span class="line">    flex: 1;</span><br><span class="line">    background-color:#eee;</span><br><span class="line">&#125;</span><br><span class="line">.left&#123;</span><br><span class="line">    flex-basis:200PX;</span><br><span class="line">    order:-1;</span><br><span class="line">    background-color: lightblue;</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">    flex-basis: 300px;</span><br><span class="line">    background-color:lightblue;</span><br><span class="line">&#125;</span><br><span class="line">//方法二：绝对定位布局</span><br><span class="line">    .container &#123;</span><br><span class="line">        position: relative;</span><br><span class="line">    &#125;</span><br><span class="line">    .main &#123;</span><br><span class="line">        margin-left: 200px;</span><br><span class="line">        margin-right: 300px;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .left &#123;</span><br><span class="line">        position: absolute;</span><br><span class="line">        top: 0;</span><br><span class="line">        /* 外层设置 padding 时才需要 */</span><br><span class="line">        /*left: 0;*/</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .right &#123;</span><br><span class="line">        position: absolute;</span><br><span class="line">        top: 0;</span><br><span class="line">        right: 0;</span><br><span class="line">    &#125;</span><br><span class="line">    /* 圣杯布局 */</span><br><span class="line">    .container &#123;</span><br><span class="line">        /* 这里不能使用 overflow: hidden; 清除浮动 */</span><br><span class="line">        /* 不然会使 aside(.left &amp; .right) 被 hidden */</span><br><span class="line">        margin-left: 200px;</span><br><span class="line">        margin-right: 160px;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .container::after &#123;</span><br><span class="line">        /* 借助伪元素清除浮动 */</span><br><span class="line">        clear: both;</span><br><span class="line">        display: block;</span><br><span class="line">        content: &apos;\200b&apos;;</span><br><span class="line">        width: 0;</span><br><span class="line">        height: 0;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .main &#123;</span><br><span class="line">        float: left;</span><br><span class="line">        width: 100%;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .left &#123;</span><br><span class="line">        float: left;</span><br><span class="line">        margin-left: -100%;</span><br><span class="line">        position: relative;</span><br><span class="line">        right: 200px;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .right &#123;</span><br><span class="line">        float: left;</span><br><span class="line">        margin-right: -160px;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /*三栏的 HTML 结构大致如下：*/</span><br><span class="line">    &lt;main&gt;</span><br><span class="line">        &lt;div class=&quot;content-wrapper&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;content&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;aside class=&quot;left&quot;&gt;&lt;/aside&gt;</span><br><span class="line">        &lt;aside class=&quot;right&quot;&gt;&lt;/aside&gt;</span><br><span class="line">    &lt;/main&gt;</span><br><span class="line">    /* 双飞翼布局 */</span><br><span class="line">    main &#123;</span><br><span class="line">        /* 这里可以使用 overflow: hidden; 清除浮动 */</span><br><span class="line">        overflow: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .content-wrapper &#123;</span><br><span class="line">        float: left;</span><br><span class="line">        width: 100%;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .content &#123;</span><br><span class="line">        margin-left: 200px;</span><br><span class="line">        margin-right: 160px;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .left &#123;</span><br><span class="line">        float: left;</span><br><span class="line">        margin-left: -100%;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .right &#123;</span><br><span class="line">        float: left;</span><br><span class="line">        margin-left: -160px;</span><br><span class="line">    &#125;</span><br><span class="line">    /*三栏的 HTML 结构大致如下：*/</span><br><span class="line">    &lt;main&gt;</span><br><span class="line">        &lt;aside class=&quot;left&quot;&gt;&lt;/aside&gt;</span><br><span class="line">        &lt;aside class=&quot;right&quot;&gt;&lt;/aside&gt;</span><br><span class="line">        &lt;div class=&quot;content&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/main&gt;</span><br><span class="line">    /* 流体布局 */</span><br><span class="line">    .left &#123;</span><br><span class="line">        float: left;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .right &#123;</span><br><span class="line">        float: right;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .content &#123;</span><br><span class="line">        margin-left: 200px;</span><br><span class="line">        margin-right: 160px;</span><br><span class="line">    &#125;</span><br><span class="line">/* BFC布局 */</span><br><span class="line">    .left &#123;</span><br><span class="line">        float: left;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .right &#123;</span><br><span class="line">        float: right;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .content &#123;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>三栏平分布局</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">考查box-sizing属性</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">       &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">       #main&#123;</span><br><span class="line">       	display: flex;</span><br><span class="line">       &#125;</span><br><span class="line">		#left&#123;width:100%;display:inline-block;flex:1;box-sizing:border-box&#125;</span><br><span class="line">		#center&#123;width:100%;display:inline-block;flex:1;box-sizing:border-box&#125;</span><br><span class="line">		#right&#123;width:100%;display:inline-block;flex:1;box-sizing:border-box&#125;</span><br><span class="line">       &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">	    &lt;div id=&quot;main&quot;&gt;</span><br><span class="line">		    &lt;div id=&quot;left&quot;&gt;left&lt;/div&gt;</span><br><span class="line">			&lt;div id=&quot;center&quot;&gt;center&lt;/div&gt;</span><br><span class="line">			&lt;div id=&quot;right&quot;&gt;right&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<p><strong>手写清除浮动的几种方式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">方法一：添加空div标签 </span><br><span class="line">clear:both</span><br><span class="line">方法二：父级标签定义伪类after</span><br><span class="line">.float-div::after&#123;</span><br><span class="line">            display: block;</span><br><span class="line">            clear: both;</span><br><span class="line">            content: &apos;&apos;;</span><br><span class="line">            height: 0px;</span><br><span class="line">        &#125;</span><br><span class="line">上一级父元素：zoom：1；//解决IE67兼容问题</span><br><span class="line">方法三：父级标签overflow:hidden</span><br><span class="line"> .float-div&#123;</span><br><span class="line">            overflow:hidden;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>Meta标签的使用</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">meta标签的使用</span><br><span class="line">meta标签共有两个属性：http-equiv和name;</span><br><span class="line">name属性</span><br><span class="line">    name属性主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。其中name属性主要有以下几种参数:</span><br><span class="line">Keywords(关键字)</span><br><span class="line">举例：＜meta name =&quot;keywords&quot; content=&quot;science, education,culture,politics,ecnomics，relationships, entertaiment, human&quot;＞</span><br><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&quot;&gt;</span><br><span class="line">http-equiv属性</span><br><span class="line">    http-equiv顾名思义，相当于http协议中文件头的作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容，与之对应的属性值为content。</span><br><span class="line">其中http-equiv属性主要有以下几种参数：</span><br><span class="line">content-Type(显示字符集的设定)</span><br><span class="line">用法：＜meta http-equiv=&quot;content-Type&quot; content=&quot;text/html; charset=gb2312&quot;＞</span><br><span class="line">Expires(期限)</span><br><span class="line">用法：＜meta http-equiv=&quot;expires&quot; content=&quot;Fri, 12 Jan 2001 18:18:18 GMT&quot;＞</span><br><span class="line">注意：必须使用GMT的时间格式。</span><br><span class="line">Pragma(cache模式)</span><br><span class="line">说明：禁止浏览器从本地计算机的缓存中访问页面内容。</span><br><span class="line">用法：＜meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;＞</span><br><span class="line">Refresh(刷新)</span><br><span class="line">说明：自动刷新并指向新页面。</span><br><span class="line">用法：＜meta http-equiv=&quot;Refresh&quot; content=&quot;2; URL=http://www.root.net&quot;＞</span><br><span class="line">注意：其中的2是指停留2秒钟后自动刷新到URL网址。</span><br><span class="line">Set-Cookie(cookie设定)</span><br><span class="line">说明：设置cookie, 如果网页过期，那么存盘的cookie将被删除。</span><br><span class="line">用法：＜meta http-equiv=&quot;Set-Cookie&quot; content=&quot;cookievalue=xxx; expires=Friday, 12-Jan-2001 18:18:18 GMT； path=/&quot;＞</span><br><span class="line">注意：必须使用GMT的时间格式。</span><br><span class="line">Window-target(显示窗口的设定)</span><br><span class="line">说明：强制页面在当前窗口以独立页面显示。</span><br><span class="line">用法：＜meta http-equiv=&quot;Window-target&quot; content=&quot;_top&quot;＞</span><br><span class="line">注意：用来防止别人在框架里调用自己的页面。</span><br></pre></td></tr></table></figure></p>
-<p><strong>媒体查询</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@media screen and (min-width:600px) &#123;</span><br><span class="line">  nav &#123;</span><br><span class="line">    float: left;</span><br><span class="line">    width: 25%;</span><br><span class="line">  &#125;</span><br><span class="line">  section &#123;</span><br><span class="line">    margin-left: 25%;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">@media screen and (max-width:599px) &#123;</span><br><span class="line">  nav li &#123;</span><br><span class="line">    display: inline;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+            <p>
+              
+实现底部footer
 
+外部有一个wrapper容器，要min-height:100%;撑满页面高度。
+footer参考wrapper绝对定位，用bottom:0定在底部
+main用来放置页面主体内容，padding-bottom与footer高度一致，用于页面长的时候给footer撑出高度
+
+文
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/10/25/css碎碎念.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
@@ -963,8 +1434,14 @@
     
 
     
+      
+    
+    
 
     
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
       
@@ -994,21 +1471,23 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/20/求职路之混沌初开/">
+    <link itemprop="mainEntityOfPage" href="yanweiniu.github.io/2017/10/20/求职路之混沌初开.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yanwei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="丨yanwei丨">
+      <meta itemprop="description" content="只有全力以赴，才能无怨无悔">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="{FS}yanwei">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="{FS}燕尾">
     </span>
 
     
@@ -1018,11 +1497,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/20/求职路之混沌初开/" itemprop="url">求职路之混沌初开</a></h1>
+                
+                <a href="/2017/10/20/求职路之混沌初开.html" class="post-title-link" itemprop="url">求职路之混沌初开</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1030,13 +1518,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-20T21:51:34+08:00">
-                2017-10-20
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-10-20 21:51:34" itemprop="dateCreated datePublished" datetime="2017-10-20T21:51:34+08:00">2017-10-20</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-03-07 13:52:46" itemprop="dateModified" datetime="2018-03-07T13:52:46+08:00">2018-03-07</time>
+              
             
           </span>
 
@@ -1052,11 +1557,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/个人成长/" itemprop="url" rel="index">
-                    <span itemprop="name">个人成长</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/个人成长/" itemprop="url" rel="index"><span itemprop="name">个人成长</span></a></span>
 
                 
                 
@@ -1066,6 +1567,7 @@
 
           
             
+            
           
 
           
@@ -1073,6 +1575,34 @@
 
           
 
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">1.7k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">2 分钟</span>
+              
+            </div>
           
 
           
@@ -1092,25 +1622,26 @@
       
         
           
-            <p><img src="http://upload-images.jianshu.io/upload_images/4216495-1e4ec38f5b664ed5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="哪条路更好"><br>半个月前就想写一下总结，但是一直没有动笔，因为找工作的过程中一直没有心情写东西。大脑中的那些记忆碎片也不想对外倾诉，一直混沌下去。具体悲惨遭遇我就不详细说了，由我一个半月的求职日记为证，这里我就敞开心扉说说这些日子的体会吧。</p>
-<p>这二个多月所遭遇的种种其实在大一的时候我基本上就预感到过，但任凭自己野蛮生长。不见棺材不掉泪，最终自证预言，多走了一段曲折之路。但是现在反而觉得没什么不好，曲折的道路走的更长，体验更多，但时间也更久；而笔直大道呢，花的时间更少，但体验就没那么丰富了。我不能说那个更好，因为有些人的人生像赛车跑道，有些更像是一次旅程，有些像是默默无闻的赶路，一切由着你的性子来。</p>
-<p><strong>真正想明白了，就不会慌乱和焦虑。</strong></p>
-<p>找工作的之前我一直觉得自己把这些都看的很透彻：“一切都只是开始，人生是场马拉松，慢即是快，笑到最后才是赢家。”再糟糕又能怎么样呢？我以为我不会在乎这么多，但现在回过头看，我还是被自己的情绪绑架了，甚至那时有点迷失。毕竟学了三年，怎么能徒劳呢？同学、老师、家长，各种压力，我没法改变现状，可能是继续准备，但更多的是胡思乱想，或者通过音乐、电影来逃避（但也有帮助，我清楚记得看到最后一段，我忍不住泪流满面，真的太悲壮了，我从电影中看到了自己），连脏话口头语都多了起来。怎么变成这个样子呢，我不是想明白了吗？其实任何事都是没法想明白的，只能是想通了，（我不是抠字眼，我自己是这样理解的）真正想明白是一种体验后的结果，当然既可以是思想的实验，也可以是真实的体验。而我以为自己明白了，其实只是一个意识上的感知，于是反复入坑，最终靠的是自己的元认知才爬了出来。你可能觉得那时候我堕落了，但是其实堕落才能让人学会珍惜。</p>
-<p><strong>谢谢你，朋友</strong></p>
-<p>以前对朋友这个概念，我特不以为然，但是这次经历居然改变我从小到大对朋友的认知。你有没有想过，为什么军人们叫生死战友，因为不经历生死就很难体会到战友之情的存在，正所谓患难见真情。同样，在这段艰苦的日子里，多亏了各个地方朋友的关心和鼓励，虽然没有到生死离别的地步，但是这种东西在这个年代很珍贵。我过得不好，我也希望你能过得好；我过得不好，同样也希望你能过得好。珍重，我的朋友!</p>
-<p><strong>运气</strong></p>
-<p>关于这个话题，我不想谈太多。我是相信运气存在的，但是我知道那是难以预测的时间和空间组合的一个随机概率事件。小概率事件我是不会主动去碰的，这种东西不可以追求，只能得之我幸，失之我命。但是一些不经意遇到的人可能改变你我的一生，《三体》里面叶文洁和1379号监听员这种类似的普通人在我们的人生中一定是存在的，但是大部分都是贵人，而我们能做的就是好好珍惜。而关于坏运气，就比如说你拿到了一副烂牌或者一把好牌被你打成了烂牌，这个时候最重要的事就是止损，尽力把你的烂牌打好。而好多人这个时候就容易本末倒置。</p>
-<p><strong>究竟是该始终笃信？还是灵活转变？</strong></p>
-<p>答案是视情况而定。对于梦想、原则我觉得应该120%的相信，而对于正在学习实践方面，应该灵活转变策略，多个角度反复尝试。创新尤其如此，必须要突破障碍，走出新的道路。</p>
-<p><strong>顺序和过程</strong></p>
-<p>我觉得这是一个非常有趣的话题，好多人会掉进类似的坑。举个例子：实习找工作的初期，自己面试经验不，知识储备不够完整，这个时候我以为自己可以了，然后就用了一些有限的名企面试名额，结果可想而知，既受到了打击，有浪费一个宝贵的机会。我用一个数学的例子解释一下这个问题：有两个相同规律的算式：<code>0*1+0*100+1000和0*1000+0*100+1</code>（临时想到的），两个算式的计算过程相同，但是数字1、100、1000的顺序不同，结果就造成了1:1000的差距。是不是有点可怕，但是生活中就是有那么多人做着这样的事。</p>
-<p><strong>放弃</strong><br>人生太多事我们是没法坚持的，这并不是我们懒惰、不思进取，而是我们必须舍弃一些东西。所谓的坚持靠的并不是什么大决心、大毅力，而是自然而然的做下来了， 而放弃的原因反而是你最初的壮志和激情。</p>
-<p>零零碎碎的说了挺多了，真不敢相信又瞎想了这么多。年轻人，少喝鸡汤多做事吧，愿不忘初心，继续前进，活在未来，俯瞰人生。</p>
-
+            <p>
+              半个月前就想写一下总结，但是一直没有动笔，因为找工作的过程中一直没有心情写东西。大脑中的那些记忆碎片也不想对外倾诉，一直混沌下去。具体悲惨遭遇我就不详细说了，由我一个半月的求职日记为证，这里我就敞开心扉说说这些日子的体会吧。
+这二个多月所遭遇的种种其实在大一的时候我基本上就预感到过，但任凭自己野蛮生
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/10/20/求职路之混沌初开.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
@@ -1118,8 +1649,14 @@
     
 
     
+      
+    
+    
 
     
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
       
@@ -1149,21 +1686,23 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/29/FIddler使用场景/">
+    <link itemprop="mainEntityOfPage" href="yanweiniu.github.io/2017/09/29/FIddler使用场景.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yanwei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="丨yanwei丨">
+      <meta itemprop="description" content="只有全力以赴，才能无怨无悔">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="{FS}yanwei">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="{FS}燕尾">
     </span>
 
     
@@ -1173,11 +1712,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/29/FIddler使用场景/" itemprop="url">FIddler使用场景</a></h1>
+                
+                <a href="/2017/09/29/FIddler使用场景.html" class="post-title-link" itemprop="url">FIddler使用场景</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1185,13 +1733,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-29T21:12:12+08:00">
-                2017-09-29
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-09-29 21:12:12" itemprop="dateCreated datePublished" datetime="2017-09-29T21:12:12+08:00">2017-09-29</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-03-08 22:13:14" itemprop="dateModified" datetime="2018-03-08T22:13:14+08:00">2018-03-08</time>
+              
             
           </span>
 
@@ -1207,11 +1772,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 
                 
                 
@@ -1221,6 +1782,7 @@
 
           
             
+            
           
 
           
@@ -1228,6 +1790,34 @@
 
           
 
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">275</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
           
 
           
@@ -1247,43 +1837,36 @@
       
         
           
-            <p><img src="http://upload-images.jianshu.io/upload_images/4216495-bd631b1df2ebbf09.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Fiddler"></p>
-<ul>
-<li><strong>开发环境host配置</strong></li>
-</ul>
-<blockquote>
-<p>通常情况下，配置host需改系统文件，很不方便；在多个开发环境下切换很低效。Fidder提供了相对高效的host配置方法。</p>
-</blockquote>
-<ul>
-<li><strong>前后端接口调试</strong></li>
-</ul>
-<blockquote>
-<p>通常情况下，调试前后端接口需要真实的环境、大量的假数据、写JavaScript代码。而Fiddler只需一个UI界面进行配置即可。</p>
-</blockquote>
-<ul>
-<li><strong>线上bugfix</strong></li>
-</ul>
-<blockquote>
-<p>Fiddler可将发布文件代理到本地，快速定位线上bug。</p>
-</blockquote>
-<ul>
-<li><strong>性能分析和优化</strong></li>
-</ul>
-<blockquote>
-<p>Fiddler会提供请求的实际图，清晰明了网站需优化的部分。</p>
-</blockquote>
-<ul>
-<li><strong>抓包</strong><blockquote>
-<p>Fiddler工具非常方便地捕获HTTP Request和HTTP Response</p>
-</blockquote>
-</li>
-</ul>
-<p>相关链接：<a href="http://www.jianshu.com/p/4a8dae519efe" target="_blank" rel="noopener">一篇介绍比较全面的博客</a></p>
+            <p>
+              
 
+开发环境host配置
+
+
+通常情况下，配置host需改系统文件，很不方便；在多个开发环境下切换很低效。Fidder提供了相对高效的host配置方法。
+
+
+前后端接口调试
+
+
+通常情况下，调试前后端接口需要真实的环境、大量的假数据、写JavaScript代码。而Fiddler只需一个UI界面进行配
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/09/29/FIddler使用场景.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
@@ -1291,8 +1874,14 @@
     
 
     
+      
+    
+    
 
     
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
       
@@ -1322,21 +1911,23 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/12/算法优化/">
+    <link itemprop="mainEntityOfPage" href="yanweiniu.github.io/2017/09/12/算法优化.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yanwei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="丨yanwei丨">
+      <meta itemprop="description" content="只有全力以赴，才能无怨无悔">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="{FS}yanwei">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="{FS}燕尾">
     </span>
 
     
@@ -1346,11 +1937,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/12/算法优化/" itemprop="url">算法优化</a></h1>
+                
+                <a href="/2017/09/12/算法优化.html" class="post-title-link" itemprop="url">算法优化</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1358,13 +1958,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-12T20:53:37+08:00">
-                2017-09-12
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-09-12 20:53:37" itemprop="dateCreated datePublished" datetime="2017-09-12T20:53:37+08:00">2017-09-12</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-03-07 13:54:40" itemprop="dateModified" datetime="2018-03-07T13:54:40+08:00">2018-03-07</time>
+              
             
           </span>
 
@@ -1380,11 +1997,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
 
                 
                 
@@ -1394,6 +2007,7 @@
 
           
             
+            
           
 
           
@@ -1401,6 +2015,34 @@
 
           
 
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">391</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
           
 
           
@@ -1420,52 +2062,42 @@
       
         
           
-            <p><strong>思路</strong></p>
-<ul>
-<li>遍历常见的算法思路</li>
-<li>遍历常见的数据结构</li>
-<li>空间和时间的交换（哈希表）</li>
-<li>预处理信息（排序）</li>
-<li>在瓶颈处寻找答案（O(nlogn)+O(n^2)；O(n^3)）</li>
-</ul>
-<p><strong>实际编写问题</strong></p>
-<ul>
-<li>极端条件的判断<blockquote>
-<p>数组为空？字符串为空？数量为0？指针为null？</p>
-</blockquote>
-</li>
-<li>代码规范（变量名）</li>
-<li>模块化，复用性</li>
-</ul>
-<p><strong>解密时间复杂度大O</strong></p>
-<ul>
-<li>O(nlogn+n) =  O(nlogn)</li>
-<li>O(nlogn+n^2) = O(n^2)</li>
-<li>O(AlogA+B)不变<blockquote>
-<p>对邻接表实现的图进行遍历：<br>时间复杂度：O(V+E)</p>
-</blockquote>
-</li>
-</ul>
-<p><strong>数据规模的概念</strong></p>
-<blockquote>
-<p>前提：如果想在1s之内解决问题：</p>
-</blockquote>
-<ul>
-<li>O(n^2)的算法可以处理大约10^4级别的数据;</li>
-<li>O(n)的算法可以处理大约10^8级别的数据;</li>
-<li>O(nlogn)的算法可以处理大约10^7级别的数据</li>
-</ul>
-<p><strong>空间复杂度</strong></p>
-<ul>
-<li>多开一个辅助的数组：O(n);</li>
-<li>多开一个辅助的二维数组：O(n^2);</li>
-<li>多开常数空间：O(1);<br>注意：递归的调用是有空间代价的，递归调用的深度就是空间的复杂度。</li>
-</ul>
+            <p>
+              思路
 
+遍历常见的算法思路
+遍历常见的数据结构
+空间和时间的交换（哈希表）
+预处理信息（排序）
+在瓶颈处寻找答案（O(nlogn)+O(n^2)；O(n^3)）
+
+实际编写问题
+
+极端条件的判断
+数组为空？字符串为空？数量为0？指针为null？
+
+
+代码规范（变量名）
+模块化，复用性
+
+解密时间复杂
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/09/12/算法优化.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
@@ -1473,8 +2105,14 @@
     
 
     
+      
+    
+    
 
     
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
       
@@ -1504,21 +2142,23 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/25/数据加密技术概述/">
+    <link itemprop="mainEntityOfPage" href="yanweiniu.github.io/2017/08/25/数据加密技术概述.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yanwei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="丨yanwei丨">
+      <meta itemprop="description" content="只有全力以赴，才能无怨无悔">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="{FS}yanwei">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="{FS}燕尾">
     </span>
 
     
@@ -1528,11 +2168,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/25/数据加密技术概述/" itemprop="url">数据加密技术概述</a></h1>
+                
+                <a href="/2017/08/25/数据加密技术概述.html" class="post-title-link" itemprop="url">数据加密技术概述</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1540,13 +2189,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-25T20:55:09+08:00">
-                2017-08-25
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-08-25 20:55:09" itemprop="dateCreated datePublished" datetime="2017-08-25T20:55:09+08:00">2017-08-25</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-03-07 13:57:18" itemprop="dateModified" datetime="2018-03-07T13:57:18+08:00">2018-03-07</time>
+              
             
           </span>
 
@@ -1562,11 +2228,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/安全/" itemprop="url" rel="index">
-                    <span itemprop="name">安全</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/安全/" itemprop="url" rel="index"><span itemprop="name">安全</span></a></span>
 
                 
                 
@@ -1576,6 +2238,7 @@
 
           
             
+            
           
 
           
@@ -1583,6 +2246,34 @@
 
           
 
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">1.2k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
           
 
           
@@ -1602,33 +2293,30 @@
       
         
           
-            <p>数据加密技术的包括这样几方面的内容：数据加密、数据解密、数字签名、签名识别以及数字证明等。</p>
-<h4 id="数据加密模型组成"><a href="#数据加密模型组成" class="headerlink" title="数据加密模型组成"></a>数据加密模型组成</h4><blockquote>
-<p>明文：准备加密的文本，称为明文P<br>密文：加密后的文本，称为密文Y<br>加密（解密）算法：用于实现从明文（密文）到密文（明文）转换的公式、规则或程序<br>密钥K：密钥是加密和解密算法中的关键参数</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/4216495-2b956cfb0b3c5a9f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="数据加密模型"></p>
-<p>在密码学中，把设计密码的技术成为密码编码，把破译密码的技术称为密码分析。密码编码和密码分析合起来称为密码学。在加密系统中，算法是相对稳定的。为了加密数据的安全性，应经常改变密钥，例如，在每加密一个新信息时改变密钥，或每天、甚至每小时改变一次密钥。</p>
-<h4 id="加密算法类型"><a href="#加密算法类型" class="headerlink" title="加密算法类型"></a>加密算法类型</h4><ol>
-<li><strong>按其对称性分类</strong><br>(1)对称加密算法<br>在这种方式中，加密和解密往往使用相同的密钥；或者在知道了加密密钥Ke后，就很容易推导出解密密钥Kd。该算法的安全性在于双方都能妥善地保护密钥，因而把这种算法称为保密密钥算法。该算法优点是加密速度快，但密钥分配与管理复杂。<br>(2)非对称加密算法<br>这种方式的加密密钥Ke和解密密钥Kd不同，而且难以从Ke推导出Kd来。可以将其中的一个密钥公开成为公开密钥，因而又称为公开密钥算法。用公开密钥加密后，能用另一把专用的密钥解密。该算法的优点是密钥管理简单，但加密算法复杂。</li>
-<li><strong>按所变换明文的单位分类</strong><br>(1)序列加密算法：把明文看做连续的比特流或字符流，逐个转换成密文。这种算法可用于对明文进行实时加密。<br>(2)分组加密算法：将明文P划分成多个固定长度的比特分组，然后在密钥控制下，每次变换一个明文分组。最著名的DES算法便是以64位为一个分组进行加密的。</li>
-</ol>
-<h4 id="基本加密方法"><a href="#基本加密方法" class="headerlink" title="基本加密方法"></a>基本加密方法</h4><p><strong>1.易位法</strong></p>
-<blockquote>
-<p>按照一定的规则，重新安排明文中的比特或字符的顺序来形成密文，而字符本身保持不变。</p>
-</blockquote>
-<p><strong>2.置换法</strong></p>
-<blockquote>
-<p>按照一定的规则，用一个字符去置换（替代）另一个字符来形成密文，比如凯撒密码。</p>
-</blockquote>
-<p>现代加密技术则采用十分复杂的算法，将易位法和置换法交替使用多次而形成乘积密码。</p>
-<h4 id="对称加密和非对称加密"><a href="#对称加密和非对称加密" class="headerlink" title="对称加密和非对称加密"></a>对称加密和非对称加密</h4><p><strong>1.对称加密算法</strong><br>最具代表性的对称加密算法是数据加密标准DES。在DES所使用的的密钥长度为64位，它由两部分组成，一部分是实际密钥，占56位；另一部分是8位奇偶校验位。DES属于分组加密算法，它将明文按64位一组分成若干个明文组，每次利用56位密钥对64位的二进制明文数据进行加密，产生64位密文数据。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4216495-56bdc63a497e9274.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="DES算法"><br><strong>非对称加密算法</strong><br>非对称加密算法又称为公开密钥算法，在公开密钥体制中，最著名的是RSA体制，被ISO推荐为公开密钥数据加密标准。</p>
-<p><strong>对比</strong><br>由于对称加密算法和非对称加密算法各有优缺点，即非对称加密算法比对称加密算法处理速度慢，但密钥管理简单，因而在当前许多新的安全协议中，都同时应用了这两种加密技术。一种常用的方法是利用公开密钥技术传递对称密码，而用对称密钥技术来对实际传输的数据进行加密和解密。例如，由发送者先产生一个随机数（对称密钥），用它来对要传送的数据进行加密；然后再由接收者的公开密钥对对称密钥进行加密。接收者收到数据后，先用私用密钥对对对称密钥进行解密，然后再用对称密钥对所收到的数据进行解密。</p>
+            <p>
+              数据加密技术的包括这样几方面的内容：数据加密、数据解密、数字签名、签名识别以及数字证明等。
+数据加密模型组成
+明文：准备加密的文本，称为明文P密文：加密后的文本，称为密文Y加密（解密）算法：用于实现从明文（密文）到密文（明文）转换的公式、规则或程序密钥K：密钥是加密和解密算法中的关键参数
 
+
+在密码
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/08/25/数据加密技术概述.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
@@ -1636,8 +2324,14 @@
     
 
     
+      
+    
+    
 
     
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
       
@@ -1667,21 +2361,23 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/21/大数据浪潮下的前端工程师（知乎live）/">
+    <link itemprop="mainEntityOfPage" href="yanweiniu.github.io/2017/08/21/大数据浪潮下的前端工程师（知乎live）.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yanwei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="丨yanwei丨">
+      <meta itemprop="description" content="只有全力以赴，才能无怨无悔">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="{FS}yanwei">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="{FS}燕尾">
     </span>
 
     
@@ -1691,11 +2387,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/21/大数据浪潮下的前端工程师（知乎live）/" itemprop="url">大数据浪潮下的前端工程师</a></h1>
+                
+                <a href="/2017/08/21/大数据浪潮下的前端工程师（知乎live）.html" class="post-title-link" itemprop="url">大数据浪潮下的前端工程师</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1703,13 +2408,30 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-21T20:13:55+08:00">
-                2017-08-21
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-08-21 20:13:55" itemprop="dateCreated datePublished" datetime="2017-08-21T20:13:55+08:00">2017-08-21</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-03-08 22:14:48" itemprop="dateModified" datetime="2018-03-08T22:14:48+08:00">2018-03-08</time>
+              
             
           </span>
 
@@ -1725,11 +2447,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 
                 
                 
@@ -1739,6 +2457,7 @@
 
           
             
+            
           
 
           
@@ -1746,6 +2465,34 @@
 
           
 
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">198</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
           
 
           
@@ -1765,20 +2512,30 @@
       
         
           
-            <p><img src="http://upload-images.jianshu.io/upload_images/4216495-4322c690e148df40.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4216495-70bc4cc29dbd702a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4216495-6a90bd784ad75cfb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4216495-f31fb1ee16238f4d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>可视化工作中的产品常会用到一些图表，推荐一个<a href="https://antv.alipay.com/vis/doc/chart/classify/compare.html" target="_blank" rel="noopener">antv的网站</a>，帮助我们理解不同图表的使用。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/4216495-6e76dc54abb98324.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="关于前端学习的一些建议"><br>大数据和前端的结合点狭义上来说是数据可视化，但不应该这么理解，这种思维方式是需要转变的。<br><strong>关于D3，highChart，Echart的优缺点</strong><br>这里有一个有趣的说法，D3就像是面粉，highChart，Echart就是不同的面条，但如果我想要饺子，只有D3能给。<br><strong>一个预测</strong></p>
-<blockquote>
-<p>未来的智能交互可能会使所谓的前端页面越来越少</p>
-</blockquote>
+            <p>
+              
 
+
+
+可视化工作中的产品常会用到一些图表，推荐一个antv的网站，帮助我们理解不同图表的使用。
+大数据和前端的结合点狭义上来说是数据可视化，但不应该这么理解，这种思维方式是需要转变的。关于D3，highChart，Echart的优缺点这里有一个有趣的说法，D3就像是面粉，highChart，Ech
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/08/21/大数据浪潮下的前端工程师（知乎live）.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
@@ -1786,8 +2543,14 @@
     
 
     
+      
+    
+    
 
     
+    <div>
+      
+    </div>
 
     <footer class="post-footer">
       
@@ -1813,15 +2576,12 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
 
           </div>
-          
-
-
           
 
         </div>
@@ -1837,109 +2597,254 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="yanwei">
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="丨yanwei丨">
             
-              <p class="site-author-name" itemprop="name">yanwei</p>
-              <p class="site-description motion-element" itemprop="description">只有全力以赴，才能无怨无悔</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">46</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">24</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          <div class="links-of-author motion-element">
-            
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/yanweiniu" target="_blank" title="GitHub">
-                    
-                      <i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="http://www.jianshu.com/u/88d14cee730de" target="_blank" title="简书">
-                    
-                      <i class="fa fa-fw fa-book"></i>简书</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.zhihu.com/people/sunny-22-80-19/activities" target="_blank" title="知 乎">
-                    
-                      <i class="fa fa-fw fa-question"></i>知 乎</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://mp.weixin.qq.com/mp/homepage?__biz=MzI3MzU0OTI3Mg==&hid=1&sn=c7fd214d4e50c5a8f07ed2ff29998675&scene=18&uin=&key=&devicetype=Windows+10&version=62060028&lang=zh_CN&ascene=7&winzoom=1" target="_blank" title="公众号">
-                    
-                      <i class="fa fa-fw fa-wechat"></i>公众号</a>
-                </span>
-              
-            
+              <p class="site-author-name" itemprop="name">丨yanwei丨</p>
+              <div class="site-description motion-element" itemprop="description">只有全力以赴，才能无怨无悔</div>
           </div>
 
           
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">46</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/ipyker" title="GitHub &rarr; https://github.com/ipyker" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:pyker@qq.com" title="E-Mail &rarr; mailto:pyker@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/viszhang" title="Weibo &rarr; https://weibo.com/viszhang" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="tencent://message/?uin=123435796&Site=&menu=yes" title="QQ &rarr; tencent://message/?uin=123435796&Site=&menu=yes" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                </span>
+              
+            </div>
+          
+
           
 
           
           
-
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-book"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ttlsa.com/" title="http://www.ttlsa.com/" rel="noopener" target="_blank">运维生存时间</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.iyunw.cn" title="https://www.iyunw.cn" rel="noopener" target="_blank">爱运维</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://nginxconfig.io/" title="https://nginxconfig.io/" rel="noopener" target="_blank">Nginxconfig</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://linux.51yip.com/" title="http://linux.51yip.com/" rel="noopener" target="_blank">Linux命令手册</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://echarts.baidu.com/index.html" title="https://echarts.baidu.com/index.html" rel="noopener" target="_blank">echarts可视化库</a>
+                  </li>
+                
+              </ul>
+            </div>
           
 
+          
+            
+          
+          
         </div>
-      </section>
+      </div>
 
       
 
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
       
 
     </div>
   </aside>
+  
 
 
         
@@ -1948,26 +2853,81 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
+        <div class="copyright" style=" text-align:center;">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">yanwei</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"> 站点字数合计:</i>
+    </span>
+    
+    <span title="站点总字数">68k</span>
+  
+  
+  <span class="post-meta-divider">|</span>
+  <a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank">XXX </a>
+
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+<div class="run_time" style=" text-align:center;">
+  <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+  <script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("07/23/2017 10:00:00");//此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+    setInterval("createtime()",250);
+  </script>
+</div>
+        
+<div class="busuanzi-count" style=" text-align:center;">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 人
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次
+    </span>
+  
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-
-
-
-
-
-        
 
 
 
@@ -1978,21 +2938,18 @@
         
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -2002,104 +2959,12 @@
 
 
 
-
+  
 
 
 
   
 
-
-  
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
 
 
 
@@ -2118,9 +2983,93 @@
 
 
 
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
   
 
-  <script type="text/javascript">
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+  
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+  
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+  
+    <script src="/lib/quicklink/quicklink.umd.js"></script>
+    <script>
+      
+        window.addEventListener('load', () => {
+      
+        quicklink({
+          timeout: 3000,
+          priority: true,
+          ignores: [uri => uri.includes('#'),uri => uri == 'yanweiniu.github.io/page/2/',]
+        });
+      
+        });
+      
+    </script>
+  
+
+
+  
+
+
+
+  
+  <script>
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -2169,6 +3118,8 @@
         .css('overflow', 'hidden');
       $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
 
+      
+
       $.ajax({
         url: path,
         dataType: isXml ? "xml" : "json",
@@ -2202,8 +3153,9 @@
                 var title = data.title.trim();
                 var titleInLowerCase = title.toLowerCase();
                 var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
                 var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
                 var indexOfTitle = [];
                 var indexOfContent = [];
                 // only match articles with not empty titles
@@ -2372,9 +3324,9 @@
               })
             };
             if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
             } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
             } else {
               resultItems.sort(function (resultLeft, resultRight) {
                 if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
@@ -2448,7 +3400,29 @@
   
 
   
+
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script>
+  
+    bookmark.loadBookmark();
+  
+  </script>
+
 
   
 
@@ -2458,3 +3432,5 @@
 
 </body>
 </html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
