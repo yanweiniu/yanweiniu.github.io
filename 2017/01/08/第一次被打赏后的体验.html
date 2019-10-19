@@ -11,10 +11,8 @@
 
 
 
-  
 
-
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next muse" lang="zh-CN">
 
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
@@ -30,7 +28,7 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link rel="stylesheet" href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
 
 
 
@@ -129,7 +127,7 @@
     fastclick: true,
     lazyload: true,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"shrinkIn","post_header":"slideLeftIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideDownIn"}},
+    motion: {"enable":false,"async":true,"transition":{"post_block":"perspectiveUpIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideDownIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -149,7 +147,7 @@
   <script>
   (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
   daovoice('init', {
-      app_id: "bd399fce"
+      app_id: "83457c4c"
     });
   daovoice('update');
   </script>
@@ -283,6 +281,8 @@
     
 
     
+      
+    
 
     <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
@@ -300,8 +300,10 @@
     
 
     
+      
+    
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">24</span></a>
 
   </li>
         
@@ -317,8 +319,10 @@
     
 
     
+      
+    
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-bookmark"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-bookmark"></i> <br>分类<span class="badge">9</span></a>
 
   </li>
         
@@ -334,8 +338,10 @@
     
 
     
+      
+    
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">46</span></a>
 
   </li>
         
@@ -350,6 +356,8 @@
       
     
 
+    
+      
     
 
     <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
@@ -368,8 +376,10 @@
     
 
     
+      
+    
 
-    <a href="/guestbook/" rel="section"><i class="menu-item-icon fa fa-fw fa-comments"></i> <br>互动</a>
+    <a href="/chatroom/" rel="section"><i class="menu-item-icon fa fa-fw fa-comments"></i> <br>互动</a>
 
   </li>
 
@@ -443,6 +453,8 @@
   
   
 
+  
+    <div class="reading-progress-bar"></div>
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -1129,6 +1141,8 @@
 
 
 
+  
+
 
 
   
@@ -1148,6 +1162,9 @@
 
   
   <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
 
 
   

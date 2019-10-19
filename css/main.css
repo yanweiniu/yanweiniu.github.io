@@ -273,7 +273,7 @@ span.exturl {
   overflow-wrap: break-word;
   word-wrap: break-word;
   background-color: transparent;
-  color: #555;
+  color: #2658a5;
   text-decoration: none;
   outline: none;
   border-bottom: 1px solid #999;
@@ -935,7 +935,7 @@ pre .javascript .function {
 }
 .post-body .tabs ul.nav-tabs li.tab.active a {
   cursor: default;
-  color: #555;
+  color: #2658a5;
 }
 .post-body .tabs .tab-content {
   background-color: #fff;
@@ -1195,7 +1195,7 @@ pre .javascript .function {
 .menu .menu-item a,
 .menu .menu-item span.exturl {
   display: block;
-  font-size: 13px;
+  font-size: 15px;
   line-height: inherit;
   border-bottom: 1px solid transparent;
   transition-property: border-color;
@@ -1257,7 +1257,7 @@ pre .javascript .function {
   opacity: 0;
 }
 .posts-expand {
-  padding-top: 40px;
+  padding-top: 20px;
 }
 @media (max-width: 767px) {
   .posts-expand {
@@ -1479,7 +1479,7 @@ pre .javascript .function {
   margin-left: 5px;
 }
 .posts-expand .post-meta {
-  margin: 3px 0 60px 0;
+  margin: 3px 0 10px 0;
   color: #999;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 12px;
@@ -1528,7 +1528,7 @@ pre .javascript .function {
   }
 }
 .post-button {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .posts-expand .post-tags {
   margin-top: 40px;
@@ -1560,7 +1560,7 @@ pre .javascript .function {
   display: block;
   line-height: 25px;
   font-size: 14px;
-  color: #555;
+  color: #2658a5;
   border-bottom: none;
 }
 .post-nav-item a:hover {
@@ -1587,7 +1587,7 @@ pre .javascript .function {
   margin-left: 5px;
 }
 .posts-expand .post-eof {
-  margin: 80px auto 60px;
+  margin: 20px auto 30px;
   width: 8%;
   height: 1px;
   background: #ccc;
@@ -1689,6 +1689,16 @@ pre .javascript .function {
 }
 .rtl.post-title {
   font-family: UKIJ Ekran;
+}
+.reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #37c6c0;
 }
 .sidebar {
   background: url("/images/sidebar-bg1.jpg") repeat !important;
@@ -1812,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff4453;
+  background: #13402a;
 }
 .feed-link,
 .chat {
@@ -1991,8 +2001,8 @@ pre .javascript .function {
 }
 .footer {
   font-size: 14px;
-  color: #999;
-  background: url("/images/headbg.jpg") repeat !important;
+  color: #000;
+  background-color: #fff !important;
 }
 .footer img {
   border: none;
@@ -2526,8 +2536,8 @@ embed {
   display: inline-block;
 }
 .post {
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin-top: 20px;
+  margin-bottom: 40px;
   padding: 25px;
   -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
