@@ -1587,6 +1587,7 @@ pre .javascript .function {
   margin-left: 5px;
 }
 .posts-expand .post-eof {
+  display: block;
   margin: 20px auto 30px;
   width: 8%;
   height: 1px;
@@ -1822,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffd5b1;
+  background: #f0ffe8;
 }
 .feed-link,
 .chat {
@@ -1849,6 +1850,28 @@ pre .javascript .function {
 .feed-link a:hover i,
 .chat a:hover i {
   color: #fff;
+}
+.links-of-author {
+  margin-top: 20px;
+  text-align: center;
+}
+.links-of-author a {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-bottom-color: #555;
+  font-size: 15px;
+}
+.links-of-author a:before {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 3px;
+  content: " ";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #ff9c20;
 }
 .links-of-blogroll {
   margin-top: 10px;
