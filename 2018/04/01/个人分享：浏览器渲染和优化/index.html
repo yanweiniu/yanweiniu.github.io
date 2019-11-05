@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: true,
+    fancybox: true,
+    fastclick: true,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideDownIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "83457c4c"
+    });
+  daovoice('update');
+  </script>
+
+  <meta name="description" content="今天我要分享的主题是 “浏览器渲染和优化方案”，以上是我要讲的一些要点，具体就是我为什么讲这个东西，具体的内容有哪些，有什么指导意义，以及一些案例的演示，那么下面咱就开始吧，我将从Why、What、How三个方面来写。">
+<meta name="keywords" content="优化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="个人分享：浏览器渲染和优化">
+<meta property="og:url" content="http://yoursite.com/2018/04/01/个人分享：浏览器渲染和优化/index.html">
+<meta property="og:site_name" content="{FS}yanwei">
+<meta property="og:description" content="今天我要分享的主题是 “浏览器渲染和优化方案”，以上是我要讲的一些要点，具体就是我为什么讲这个东西，具体的内容有哪些，有什么指导意义，以及一些案例的演示，那么下面咱就开始吧，我将从Why、What、How三个方面来写。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://s5.postimg.org/yxx444yc7/image.png">
+<meta property="og:image" content="https://s5.postimg.org/zcbrpmnnr/TIM_20180408203521.png">
+<meta property="og:image" content="https://s5.postimg.org/bmmc0ihg7/TIM_20180408203521.png">
+<meta property="og:image" content="https://s5.postimg.org/id2ta021z/TIM_20180408203521.png">
+<meta property="og:image" content="https://s5.postimg.org/defavkt53/TIM_20180408203521.png">
+<meta property="og:image" content="https://s5.postimg.org/e3y37z3zb/TIM_20180408203521.png">
+<meta property="og:image" content="https://s5.postimg.org/6b7fg2qbb/TIM_20180408203521.png">
+<meta property="og:image" content="https://s5.postimg.org/gy18ljgh3/TIM_20180408203521.png">
+<meta property="og:updated_time" content="2018-04-10T14:31:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="个人分享：浏览器渲染和优化">
+<meta name="twitter:description" content="今天我要分享的主题是 “浏览器渲染和优化方案”，以上是我要讲的一些要点，具体就是我为什么讲这个东西，具体的内容有哪些，有什么指导意义，以及一些案例的演示，那么下面咱就开始吧，我将从Why、What、How三个方面来写。">
+<meta name="twitter:image" content="https://s5.postimg.org/yxx444yc7/image.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="{FS}yanwei" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2018/04/01/个人分享：浏览器渲染和优化/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>个人分享：浏览器渲染和优化 | {FS}yanwei</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+ 
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">{FS}yanwei</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">a simple man</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Navigationsleiste an/ausschalten">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Schlagwörter<span class="badge">22</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-bookmark"></i> <br>Kategorien<span class="badge">8</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archiv<span class="badge">38</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>Über</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-互动">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/chatroom/" rel="section"><i class="menu-item-icon fa fa-fw fa-comments"></i> <br>互动</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Suche</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Suche..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/01/个人分享：浏览器渲染和优化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yanwei">
+      <meta itemprop="description" content="让有意义变得有趣，让有趣变得有意义。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="{FS}yanwei">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">个人分享：浏览器渲染和优化
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Erstellt: 2018-04-01 20:15:38" itemprop="dateCreated datePublished" datetime="2018-04-01T20:15:38+08:00">2018-04-01</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Bearbeitet am</span>
+                
+                <time title="Geändert am: 2018-04-10 22:31:46" itemprop="dateModified" datetime="2018-04-10T22:31:46+08:00">2018-04-10</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Aufrufe:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>今天我要分享的主题是 “浏览器渲染和优化方案”，以上是我要讲的一些要点，具体就是我为什么讲这个东西，具体的内容有哪些，有什么指导意义，以及一些案例的演示，那么下面咱就开始吧，我将从Why、What、How三个方面来写。<br>    <a id="more"></a></p>
+<h1 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h1><p>在准备分享之前我一直纠结，到底给分享什么，很高深的我讲不明白，太简单了讲了也没意义。后来浩源说：可以将你们工作以来一直想钻研却没有机会的学的东西，我想了一下：接触前端以来，我就好奇代码怎么就成了网页的呢，浏览器对它干了什么，对于不懂计算机的人来说这真是太神奇了，而我们却习以为常。但是在准备这场分享之前，我知道网页渲染是无非是：html生成dom树，css生成css规则树，然后合成渲染树，用GPU渲染出来。我觉得这还是太浅薄了，这一块的东西，这一块详细的话估计可以写成一本书，网上有相关的系列博客都非常长，有上万字。看完没啥感觉，里面还涉及编译原理的知识。这种东西我估计大家平时根本不会主动去看，因为感觉不实用。所以我就精简出来自己感觉有用的东西与大家分享一下。</p>
+<p>这就说到了我分享这个主题的第二个原因了，大家觉得我们开发产品的用户是谁呢？老板还是公司员工、保洁、保姆阿姨们？我的答案是：浏览器，浏览器才是我们的用户，我们输出的代码其实是给浏览器用的，然后浏览器输入的内容才是给用户的。而那个保洁阿姨什么的都是浏览器的用户。所以作为前端开发者，居然连自己的用户都不了解，你们不觉得恐怖吗，这让我想起了我们做化学实验，总是按照手册上的步骤将各种药水混合起来，然后效果出现了就万事大吉了，可是说不定那天错了一步可能就牺牲了。一样的道理，前端开发者也是根据API、写一堆代码往浏览器扔，觉得只要语法、逻辑没有什么错误就能过，其实这是一样的道理。说不定那天浏览器就爆炸罢工了。所以我觉得一个好的FE应该对浏览器好一点，让他跑的快一点。总结起来就一句话，让用户满意。<br>怎么让用户满意呢？当然是了解它，那下面就来了解一些具体的内容。</p>
+<h1 id="What"><a href="#What" class="headerlink" title="What"></a>What</h1><h3 id="浏览器组成"><a href="#浏览器组成" class="headerlink" title="浏览器组成"></a>浏览器组成</h3><ul>
+<li>用户界面</li>
+<li>浏览器引擎</li>
+<li>渲染引擎（内核）</li>
+<li>网络</li>
+<li>用户界面后端</li>
+<li>JavaScript 解释器</li>
+<li>数据存储<br><a href="https://postimg.org/image/3qyh08afn/" target="_blank" rel="noopener"><img src="https://s5.postimg.org/yxx444yc7/image.png" alt="image.png"></a></li>
+</ul>
+<h3 id="浏览器渲染引擎"><a href="#浏览器渲染引擎" class="headerlink" title="浏览器渲染引擎"></a>浏览器渲染引擎</h3><ul>
+<li>IE（Trident）</li>
+<li>Chrome28+（Blink）</li>
+<li>Firefox（Gecko）</li>
+<li>Opera（Blink）</li>
+<li>Safari（Webkit）</li>
+<li>UC（U3）</li>
+<li>QQ浏览器/微信webview（X5/+-Blink）</li>
+</ul>
+<p>渲染引擎 －解析DOM文档和CSS规则并将内容排版到浏览器中显示有样式的界面，也有人称之为排版引擎，我们常说的浏览器内核主要指的就是渲染引擎。</p>
+<h3 id="浏览器渲染过程"><a href="#浏览器渲染过程" class="headerlink" title="浏览器渲染过程"></a>浏览器渲染过程</h3><h5 id="html页面的呈现流程"><a href="#html页面的呈现流程" class="headerlink" title="html页面的呈现流程"></a>html页面的呈现流程</h5><ol>
+<li>浏览器把获取到的HTML代码解析成1个DOM树，HTML中的每个tag都是DOM树中的1个节点，根节点就是我们常用的document对象。DOM树里包含了所有HTML标签，包括display:none隐藏，还有用JS动态添加的元素等。</li>
+<li>浏览器把所有样式解析成样式结构体，在解析的过程中会去掉浏览器不能识别的样式，比如IE会去掉-moz开头的样式，</li>
+<li>DOM Tree 和样式结构体组合后构建render tree, render tree类似于DOM tree，但区别很大，render tree中每个NODE都有自己的style，而且 render tree不包含隐藏的节点 (比如display:none的节点，还有head节点)，因为这些节点不会用于呈现，而且不会影响呈现的，所以就不会包含到 render tree中。</li>
+<li><p>对renderTree的一些操作会触发，重排和回流。</p>
+<p> 当render tree中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。这就称为回流(reflow)。每个页面至少需要一次回流，就是在页面第一次加载的时候。在回流的时候，浏览器会使渲染树中受到影响的部分失效，并重新构造这部分渲染树，完成回流后，浏览器会重新绘制受影响的部分到屏幕中，该过程成为重绘。</p>
+<p> 渲染树构建完成，接下来是不是就可以呈现到页面上了呢？不，浏览器还有个层叠上下文。就是决定元素间相互覆盖关系(比如z-index)的东西。这使得文档流中位置靠前位置的元素有可能覆盖靠后的元素。如果没这个步骤，可能层次关系就是混乱的。</p>
+<p> 上面的过程可以搞定绘制过程。但是浏览器里面经常有动画、video、canvas、3d的css等东西。这意味着页面在有这些元素时，页面显示会经常变动，也就意味着位图会经常变动。每秒60帧的动效里，每次变动都重绘整个位图是很恐怖的性能开销。</p>
+<p> 因此浏览器为了优化这一过程。引出了Graphics Layers和Graphics Context，前者就是我们常说的合成层(Compositing Layer)：Graphics Layer（合成层）可看作是一个图形缓冲区，被若干Render Layer共用。<br>Graphics Layer（合成层）可看作是一个图形缓冲区，被若干Render Layer共用。<br><a href="https://postimg.org/image/es6xr57wj/" target="_blank" rel="noopener"><img src="https://s5.postimg.org/zcbrpmnnr/TIM_20180408203521.png" alt="TIM_20180408203521.png"></a></p>
+</li>
+</ol>
+<h3 id="DOM-Tree"><a href="#DOM-Tree" class="headerlink" title="DOM Tree"></a>DOM Tree</h3><p><a href="https://postimg.org/image/6b7ffsvdf/" target="_blank" rel="noopener"><img src="https://s5.postimg.org/bmmc0ihg7/TIM_20180408203521.png" alt="TIM_20180408203521.png"></a></p>
+<h5 id="把HTML文档解析为DOM树的过程"><a href="#把HTML文档解析为DOM树的过程" class="headerlink" title="把HTML文档解析为DOM树的过程"></a>把HTML文档解析为DOM树的过程</h5><ul>
+<li>遇到<scirpt>标签则停止解析，先执行js</scirpt></li>
+<li>DOM解析完成后触发DOMContentLoaded事件</li>
+<li>此时图片资源并未加载完成</li>
+<li>display: none的元素也在DOM树中</li>
+<li><scirpt>标签也在DOM树中</scirpt></li>
+<li>注释也在DOM树中</li>
+</ul>
+<p><a href="https://postimg.org/image/70q7s7tcz/" target="_blank" rel="noopener"><img src="https://s5.postimg.org/id2ta021z/TIM_20180408203521.png" alt="TIM_20180408203521.png"></a></p>
+<h5 id="将CSS代码解析为CSS规则树的过程"><a href="#将CSS代码解析为CSS规则树的过程" class="headerlink" title="将CSS代码解析为CSS规则树的过程"></a>将CSS代码解析为CSS规则树的过程</h5><ul>
+<li>与DOM解析同步进行</li>
+<li>与script的执行互斥</li>
+<li>Webkit内核进行了script执行优化</li>
+</ul>
+<p><a href="https://postimg.org/image/cc54d1abn/" target="_blank" rel="noopener"><img src="https://s5.postimg.org/defavkt53/TIM_20180408203521.png" alt="TIM_20180408203521.png"></a></p>
+<h5 id="DOM-Tree-CSS-Rules-Render-Tree"><a href="#DOM-Tree-CSS-Rules-Render-Tree" class="headerlink" title="DOM Tree + CSS Rules = Render Tree"></a>DOM Tree + CSS Rules = Render Tree</h5><ul>
+<li>每个节点为一个Render Object对象，包含宽高、位置、背景色等样式信息</li>
+<li>宽高和位置是通过Layout（重排）计算出</li>
+<li>Render Tree和DOM Tree不完全对应</li>
+<li>display: none的元素不在Render Tree中</li>
+<li>visibility: hidden的元素在Render Tree中</li>
+<li>float元素、absolute元素、fixed元素会发生位置偏移</li>
+<li>常说的脱离文档流，就是脱离Render Tree</li>
+</ul>
+<p><a href="https://postimg.org/image/tpferxfxf/" target="_blank" rel="noopener"><img src="https://s5.postimg.org/e3y37z3zb/TIM_20180408203521.png" alt="TIM_20180408203521.png"></a></p>
+<h5 id="渲染层：将Render-Tree上的某些节点提升到同一个Layer的过程"><a href="#渲染层：将Render-Tree上的某些节点提升到同一个Layer的过程" class="headerlink" title="渲染层：将Render Tree上的某些节点提升到同一个Layer的过程"></a>渲染层：将Render Tree上的某些节点提升到同一个Layer的过程</h5><ul>
+<li>处理定位、裁剪、页内滚动、CSS Transform/Opacity/Animation/Filter、z-index排序等</li>
+<li>所有Render Layer组合成一棵Layer Tree</li>
+<li>浏览器基于Layer Tree进行Paint</li>
+</ul>
+<p>每个render Layer都有一些属于自己的RenderObject，第二个renderLayer的renderObject是上一个的子元素，所以左边的render Tree 对应的 RenderLayer 也是一颗树,RenderLayer树的构建为渲染阶段处理z-index、opacity、overflow、scrollbar等打下一定的基础，在我们了解渲染的处理过程时我们再来深入的了解。在这里我们初步的了解到在构建Render树的同时会维护一颗RenderLayer树，为分层布局、渲染作准备。</p>
+<h5 id="生成Render-Layer的条件"><a href="#生成Render-Layer的条件" class="headerlink" title="生成Render Layer的条件"></a>生成Render Layer的条件</h5><ul>
+<li>根元素</li>
+<li>有明确的定位属性</li>
+<li>透明元素（opacity不为1）</li>
+<li>backface-visibility 属性为 hidden</li>
+<li>有 CSS reflection 属性</li>
+<li>有 CSS column-count 属性（不为 auto）或者 有 CSS column-width 属性（不为 auto）</li>
+<li>当前有对于 opacity、transform、filter、backdrop-filter 应用动画（为提升为GraphicsLayer做准备）</li>
+<li>overflow 不为 visible</li>
+<li>不需要 paint 的 PaintLayer，比如一个没有视觉属性（背景、颜色、阴影等）的空 div</li>
+</ul>
+<p><a href="https://postimg.org/image/egphe8ek3/" target="_blank" rel="noopener"><img src="https://s5.postimg.org/6b7fg2qbb/TIM_20180408203521.png" alt="TIM_20180408203521.png"></a></p>
+<h5 id="将Layer-Tree上的某些节点进一步提升与合并"><a href="#将Layer-Tree上的某些节点进一步提升与合并" class="headerlink" title="将Layer Tree上的某些节点进一步提升与合并"></a>将Layer Tree上的某些节点进一步提升与合并</h5><ul>
+<li>GPU直接渲染，快于CPU</li>
+<li>当需要 repaint 时，只需要 repaint 本身，不会影响到其他的层</li>
+<li>对于 transform 和 opacity 效果，不会触发 layout 和 paint</li>
+<li>没有Graphics Layer的元素与父元素共属同一个</li>
+<li>过多的合成层会造成GPU传输的压力</li>
+</ul>
+<h5 id="生成Graphics-Layer的条件"><a href="#生成Graphics-Layer的条件" class="headerlink" title="生成Graphics Layer的条件"></a>生成Graphics Layer的条件</h5><ul>
+<li>video、canvas元素，flash插件</li>
+<li>拥有perspective、CSS3D变形的元素（perspective 属性设置元素被查看位置的视图）</li>
+<li>backface-visibility 为 hidden（backface-visibility:隐藏被旋转的 div 元素的背面：）</li>
+<li>对 opacity、transform、filter、backdropfilter 应用了 animation 或者 transition</li>
+<li>设置了will-change属性的元素（will-change: 提前告诉浏览器要进行动画相关的操作）</li>
+<li>层之间的层叠遮盖</li>
+</ul>
+<h3 id="HOW（常用优化手段）"><a href="#HOW（常用优化手段）" class="headerlink" title="HOW（常用优化手段）"></a>HOW（常用优化手段）</h3><h5 id="资源引入位置"><a href="#资源引入位置" class="headerlink" title="资源引入位置"></a>资源引入位置</h5><ul>
+<li>css文件放在head中，先外链的，后本页的</li>
+<li>js文件放在body底部，先外部库，后本页的</li>
+<li>兼容处理的js文件应放在head中，如babel-polyfill.js</li>
+<li>页面布局的js文件应放在head中，如flexible.js</li>
+<li>body中间尽量不写style标签和script标签</li>
+</ul>
+<h5 id="异步加载js文件"><a href="#异步加载js文件" class="headerlink" title="异步加载js文件"></a>异步加载js文件</h5><p><a href="https://postimg.org/image/dr6p1ww0z/" target="_blank" rel="noopener"><img src="https://s5.postimg.org/gy18ljgh3/TIM_20180408203521.png" alt="TIM_20180408203521.png"></a><br>蓝色代表网络读取，红色代表执行时间，都是针对脚本的。绿色代表html解析</p>
+<h5 id="DOM操作相关"><a href="#DOM操作相关" class="headerlink" title="DOM操作相关"></a>DOM操作相关</h5><ul>
+<li>缓存DOM（变量）</li>
+<li>批量操作DOM （字符串拼接）</li>
+<li>在内存中操作DOM（document.createDocumentFragment()）</li>
+<li>通过类修改DOM样式（将样式封装成class，减少repaint和reflow）</li>
+<li>通过事件代理绑定事件</li>
+<li>DOM读写分离（类似nextTick函数，在下次DOM更新循环结束之后执行的延迟回调）</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>遇到性能瓶颈时的解决依据<br>为平时编码提供规范<br>进行performance review时的思路策略</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="http://taobaofed.org/blog/2016/04/25/performance-composite/" target="_blank" rel="noopener">http://taobaofed.org/blog/2016/04/25/performance-composite/</a><br><a href="https://juejin.im/entry/59f010fdf265da4315231caa" target="_blank" rel="noopener">https://juejin.im/entry/59f010fdf265da4315231caa</a><br>推荐书籍《Webkit技术内幕》</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div>Thank you for your accept. mua！</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Spenden
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/reward/wechatpay.png" alt="yanwei WeChat Bezahlung">
+        <p>WeChat Bezahlung</p>
+      </div>
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/reward/alipay.png" alt="yanwei Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Beitragsautor:  </strong>yanwei</li>
+  <li class="post-copyright-link">
+    <strong>Beitragslink: </strong>
+    
+    <a href="http://yoursite.com/2018/04/01/个人分享：浏览器渲染和优化/" title="个人分享：浏览器渲染和优化">http://yoursite.com/2018/04/01/个人分享：浏览器渲染和优化/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Urheberrechtshinweis:  </strong>Alle Artikel in diesem Blog sind unter <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> lizenziert, außer es wird anders angegeben.</li>
+</ul>
+
+      </div>
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:16px;">-------------本文结束<i class="fa fa-heart"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/优化/"><i class="fa fa-tag"></i> 优化</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/05/Emmet使用技巧/" rel="next" title="Emmet使用技巧">
+                <i class="fa fa-chevron-left"></i> Emmet使用技巧
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/16/用十年教会自己编程/" rel="prev" title="用十年教会自己编程">
+                用十年教会自己编程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDM5Mi8yMDkyNA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="yanwei">
+            
+              <p class="site-author-name" itemprop="name">yanwei</p>
+              <div class="site-description motion-element" itemprop="description">让有意义变得有趣，让有趣变得有意义。</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">38</span>
+                    <span class="site-state-item-name">Artikel</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">Kategorien</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">schlagwörter</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/yanweiniu" title="GitHub &rarr; https://github.com/yanweiniu" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:fromyanwei@163.com" title="E-Mail &rarr; mailto:fromyanwei@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/viszhang" title="Weibo &rarr; https://weibo.com/viszhang" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="tencent://message/?uin=123435796&Site=&menu=yes" title="QQ &rarr; tencent://message/?uin=123435796&Site=&menu=yes" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-book"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ttlsa.com/" title="http://www.ttlsa.com/" rel="noopener" target="_blank">语雀</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://nginxconfig.io/" title="https://nginxconfig.io/" rel="noopener" target="_blank">Nginxconfig</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://linux.51yip.com/" title="http://linux.51yip.com/" rel="noopener" target="_blank">Linux命令手册</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://echarts.baidu.com/index.html" title="https://echarts.baidu.com/index.html" rel="noopener" target="_blank">echarts可视化库</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Why"><span class="nav-number">1.</span> <span class="nav-text">Why</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What"><span class="nav-number">2.</span> <span class="nav-text">What</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器组成"><span class="nav-number">2.0.1.</span> <span class="nav-text">浏览器组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器渲染引擎"><span class="nav-number">2.0.2.</span> <span class="nav-text">浏览器渲染引擎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器渲染过程"><span class="nav-number">2.0.3.</span> <span class="nav-text">浏览器渲染过程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#html页面的呈现流程"><span class="nav-number">2.0.3.0.1.</span> <span class="nav-text">html页面的呈现流程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM-Tree"><span class="nav-number">2.0.4.</span> <span class="nav-text">DOM Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#把HTML文档解析为DOM树的过程"><span class="nav-number">2.0.4.0.1.</span> <span class="nav-text">把HTML文档解析为DOM树的过程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#将CSS代码解析为CSS规则树的过程"><span class="nav-number">2.0.4.0.2.</span> <span class="nav-text">将CSS代码解析为CSS规则树的过程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DOM-Tree-CSS-Rules-Render-Tree"><span class="nav-number">2.0.4.0.3.</span> <span class="nav-text">DOM Tree + CSS Rules = Render Tree</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#渲染层：将Render-Tree上的某些节点提升到同一个Layer的过程"><span class="nav-number">2.0.4.0.4.</span> <span class="nav-text">渲染层：将Render Tree上的某些节点提升到同一个Layer的过程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#生成Render-Layer的条件"><span class="nav-number">2.0.4.0.5.</span> <span class="nav-text">生成Render Layer的条件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#将Layer-Tree上的某些节点进一步提升与合并"><span class="nav-number">2.0.4.0.6.</span> <span class="nav-text">将Layer Tree上的某些节点进一步提升与合并</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#生成Graphics-Layer的条件"><span class="nav-number">2.0.4.0.7.</span> <span class="nav-text">生成Graphics Layer的条件</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#HOW（常用优化手段）"><span class="nav-number">2.0.5.</span> <span class="nav-text">HOW（常用优化手段）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#资源引入位置"><span class="nav-number">2.0.5.0.1.</span> <span class="nav-text">资源引入位置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#异步加载js文件"><span class="nav-number">2.0.5.0.2.</span> <span class="nav-text">异步加载js文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DOM操作相关"><span class="nav-number">2.0.5.0.3.</span> <span class="nav-text">DOM操作相关</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.0.6.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">2.0.7.</span> <span class="nav-text">参考资料</span></a></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" style=" text-align:center;">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yanwei</span>
+
+  
+  
+  <span class="post-meta-divider">|</span>
+  <a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank">XXX </a>
+
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+<div class="run_time" style=" text-align:center;">
+  <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+  <script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("07/23/2017 10:00:00");//此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+    setInterval("createtime()",250);
+  </script>
+</div>
+        
+<div class="busuanzi-count" style=" text-align:center;">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Alle Besucher">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 人
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Alle Aufrufe">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+  
+  
+
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '2018/04/01/个人分享：浏览器渲染和优化/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#mehr");
+  
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
